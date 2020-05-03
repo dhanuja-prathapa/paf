@@ -49,6 +49,32 @@ public class HospitalController implements IHospitalController {
         return hospitals;
     }
 
+    public String getAllHospitals(){
+        String output = "<table border=\"1\"><tr><th>ID</th><th>Name</th><th>Type</th><th>Description</th><th>Address</th><th>Phone</th><th>Update</th><th>Remove</th></tr>";
+        List<Hospital> lsits = getHospitals();
+        for (Hospital h: lsits
+        ) {
+            String id = Integer.toString(h.getId());
+            String name = h.getName();
+            String type = h.getType();
+            String description = h.getDescription();
+            String address = h.getAddress();
+            String phone = h.getPhone();
+
+            output += "<tr><td><input id='hidHosIDUpdate' name='hidHosUpdate' type='hidden' value='" + id + "'>"+ id +"</td>";
+            output += "<td>" + name + "</td>";
+            output += "<td>" + type + "</td>";
+            output += "<td>" + description + "</td>";
+            output += "<td>" + address + "</td>";
+            output += "<td>" + phone + "</td>";
+
+            output += "<td><input name='btnUpdate' type='button' value='Update' class='btnUpdate btn btn-secondary'></td> <td><input name='btnRemove' type='button' value='Remove' class='btnRemove btn btn-danger' data-itemid='" + id + "'>" + "</td></tr>";
+        }
+        output += "</table>";
+        return output;
+    }
+
+
     @Override
     public String createHospital(Hospital h) {
         int hosId = idGenerate.generateHosID((ArrayList<Integer>) getIDs());

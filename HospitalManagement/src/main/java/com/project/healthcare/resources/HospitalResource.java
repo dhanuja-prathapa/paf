@@ -36,25 +36,7 @@ public class HospitalResource {
     @Produces(MediaType.TEXT_PLAIN)
     public String getHospitalsTable() {
         System.out.println("getHospitals called");
-        String output = "<table border=\"1\"><tr><th>ID</th><th>Name</th><th>Type</th><th>Description</th><th>Address</th><th>Phone</th></tr>";
-        List<Hospital> lsits = repo.getHospitals();
-        for (Hospital h: lsits
-             ) {
-            String id = Integer.toString(h.getId());
-            String name = h.getName();
-            String type = h.getType();
-            String description = h.getDescription();
-            String address = h.getAddress();
-            String phone = h.getPhone();
-            output += "<tr><td>" + id + "</td>";
-            output += "<td>" + name + "</td>";
-            output += "<td>" + type + "</td>";
-            output += "<td>" + description + "</td>";
-            output += "<td>" + address + "</td>";
-            output += "<td>" + phone + "</td></tr>";
-        }
-            output += "</table>";
-            return output;
+        return repo.getAllHospitals();
         }
 
     @GET

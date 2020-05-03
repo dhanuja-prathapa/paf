@@ -19,7 +19,7 @@
 <body>
 <div class="container">
     <div class="row">
-        <div class="col-6">
+        <div class="col-md-9">
 <form id="formHospital" name="formHospital" method="post" action="hospital.jsp">
     Hospital ID:
     <input id="hospitalID" name="hospitalID" type="text"
@@ -51,7 +51,7 @@
             <div id="divHospitalsGrid">
                 <%
                     HospitalController hospitalController = new HospitalController();
-                    out.print(hospitalController.getHospitals());
+                    out.print(hospitalController.getAllHospitals());
                 %>
             </div>
         </div>
