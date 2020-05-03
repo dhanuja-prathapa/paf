@@ -12,19 +12,8 @@
         </init-param>
         <load-on-startup>1</load-on-startup>
     </servlet>
-    <servlet>
-        <servlet-name>HospitalsAPI</servlet-name>
-        <servlet-class>com.project.healthcare.HospitalsAPI</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>HospitalsAPI</servlet-name>
-        <url-pattern>/HospitalsAPI</url-pattern>
-    </servlet-mapping>
     <servlet-mapping>
         <servlet-name>Jersey Web Application</servlet-name>
         <url-pattern>/webapi/*</url-pattern>
     </servlet-mapping>
-    <welcome-file-list>
-        <welcome-file>hospital.jsp</welcome-file>
-    </welcome-file-list>
 </web-app>
