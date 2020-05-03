@@ -17,6 +17,9 @@
     <title>Hospital Management</title>
 </head>
 <body>
+<div class="container">
+    <div class="row">
+        <div class="col-6">
 <form id="formHospital" name="formHospital" method="post" action="hospital.jsp">
     Hospital ID:
     <input id="hospitalID" name="hospitalID" type="text"
@@ -42,6 +45,19 @@
            class="btn btn-primary">
     <input type="hidden" id="hidHosIDSave" name="hidHosIDSave" value="">
 </form>
+            <div id="alertSuccess" class="alert alert-success"></div>
+            <div id="alertError" class="alert alert-danger"></div>
+            <br>
+            <div id="divHospitalsGrid">
+                <%
+                    HospitalController hospitalController = new HospitalController();
+                    out.print(hospitalController.getHospitals());
+                %>
+            </div>
+        </div>
+    </div>
+</div>
+
 
 </body>
 </html>

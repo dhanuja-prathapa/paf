@@ -113,9 +113,10 @@ public class HospitalController implements IHospitalController {
     }
 
     @Override
-    public void updateHospital(Hospital h) {
+    public String updateHospital(Hospital h) {
         String sql = "update hospital set name=?, type=?, description=?, address=?, phone=? where id=?";
         connecton = getDBConnection();
+        String output;
         try {
             pt = connecton.prepareStatement(sql);
             pt.setString(1, h.getName());
@@ -125,11 +126,14 @@ public class HospitalController implements IHospitalController {
             pt.setString(5, h.getPhone());
             pt.setInt(6, h.getId());
             pt.executeUpdate();
+            output="Updated";
         } catch (SQLException e) {
             log.log(Level.SEVERE, e.getMessage());
+            output="Error";
         } finally {
             ptClose(pt);
         }
+        return output;
     }
 
     @Override
