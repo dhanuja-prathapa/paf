@@ -6,6 +6,44 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@page import="com.project.healthcare.controller.HospitalController"%>
+<%@ page import="com.project.healthcare.model.Hospital" %>
+<%
+
+    //Save---------------------------------
+    if (request.getParameter("hospitalID") != null)
+    {
+        HospitalController hosObj = new HospitalController();
+        Hospital hospital = new Hospital();
+        String stsMsg = "";
+        hospital.setId(Integer.parseInt(request.getParameter("hospitalID")));
+        hospital.setName(request.getParameter("hospitalName"));
+        hospital.setType(request.getParameter("hospitalType"));
+        hospital.setDescription(request.getParameter("hospitalDesc"));
+        hospital.setAddress(request.getParameter("hospitalAddress"));
+        hospital.setPhone(request.getParameter("hospitalPhone"));
+
+    //Insert--------------------------
+        if (request.getParameter("hidHosIDSave") == "")
+        {
+
+            stsMsg = hosObj.createHospital(hospital);
+        }
+        else//Update----------------------
+        {
+            stsMsg = hosObj.updateHospital(hospital);
+        }
+        session.setAttribute("statusMsg", stsMsg);
+    }
+//Delete-----------------------------
+    if (request.getParameter("hidHosIDDelete") != null)
+    {
+        HospitalController hosObj = new HospitalController();
+        String stsMsg =
+                hosObj.deleteHospital(Integer.parseInt(request.getParameter("hidHosIDDelete")));
+        session.setAttribute("statusMsg", stsMsg);
+    }
+%>
 <html>
 <head>
     <link rel="stylesheet" href="Views/bootstrap.min.css">

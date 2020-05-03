@@ -1,0 +1,16 @@
+
+N	java:S106"9Replace this use of System.out or System.err by a logger.(ò×ß¸
+S	java:S106!"9Replace this use of System.out or System.err by a logger.(ÁŒŸûÿÿÿÿ
+j
+java:S1128"TRemove this unnecessary import: same package classes are always implicitly imported.(ß·‹·
+?
+java:S21157")Add password protection to this database.(ê§Œ³
+N	java:S106>"9Replace this use of System.out or System.err by a logger.(Ý„²û
+>
+java:S1148/"#Use a logger to log this exception.(€ÉÔ…ýÿÿÿÿ
+D
+java:S2115*")Add password protection to this database.(ÁÛù–þÿÿÿÿ
+?
+java:S2115")Add password protection to this database.(ê§Œ³
+S	java:S106;"9Replace this use of System.out or System.err by a logger.(‚õÐþÿÿÿÿÿ
+S	java:S106A"9Replace this use of System.out or System.err by a logger.(¸ºÓæùÿÿÿÿ

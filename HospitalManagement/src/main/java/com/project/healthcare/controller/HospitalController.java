@@ -49,33 +49,6 @@ public class HospitalController implements IHospitalController {
         return hospitals;
     }
 
-    //table
-    public String hospitalTable(){
-        String output = "<table border=\"1\"><tr><th>ID</th><th>Name</th><th>Type</th><th>Description</th><th>Address</th><th>Phone</th></tr>";
-        List<Hospital> lsits = getHospitals();
-        for (Hospital h: lsits
-        ) {
-            String id = Integer.toString(h.getId());
-            String name = h.getName();
-            String type = h.getType();
-            String description = h.getDescription();
-            String address = h.getAddress();
-            String phone = h.getPhone();
-            output += "<tr><td><input id =\"hidHospitalIDUpdate\" name=\"hidHospitalIDUpdate\" type=\"hidden\" value=\"" + id +"\">" + id + "</td>";
-            output += "<td>" + name + "</td>";
-            output += "<td>" + type + "</td>";
-            output += "<td>" + description + "</td>";
-            output += "<td>" + address + "</td>";
-            output += "<td>" + phone + "</td>";
-
-            //buttons
-            output += "<td><input name=\"btnUpdate\" type=\"button\" value=\"Update\" class=\"btnUpdate btn btn-secindary\"></td><td><form method=\"post\" action=\"hospital.jsp\"><input name=\"btnRemove\" type=\"submit\" value=\"Remove\" class=\"btn btn-danger\"><input name=\"hidHosIDDelete\" type=\"hidden\" value=\"" +id +"\">"+"</form></td></tr>";
-        }
-        output += "</table>";
-
-        return output;
-    }
-
     @Override
     public String createHospital(Hospital h) {
         int hosId = idGenerate.generateHosID((ArrayList<Integer>) getIDs());
@@ -140,10 +113,9 @@ public class HospitalController implements IHospitalController {
     }
 
     @Override
-    public String updateHospital(Hospital h) {
+    public void updateHospital(Hospital h) {
         String sql = "update hospital set name=?, type=?, description=?, address=?, phone=? where id=?";
         connecton = getDBConnection();
-        String output;
         try {
             pt = connecton.prepareStatement(sql);
             pt.setString(1, h.getName());
@@ -153,15 +125,11 @@ public class HospitalController implements IHospitalController {
             pt.setString(5, h.getPhone());
             pt.setInt(6, h.getId());
             pt.executeUpdate();
-
-            output = "Updated Successfully";
         } catch (SQLException e) {
             log.log(Level.SEVERE, e.getMessage());
-            output = "Error";
         } finally {
             ptClose(pt);
         }
-        return output;
     }
 
     @Override
