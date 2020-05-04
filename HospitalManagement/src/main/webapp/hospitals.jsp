@@ -27,7 +27,8 @@
     <div id="hosID" name="hosID" class="badge badge-info"></div>
     <br> Hospital name:
     <input id="hospitalName" name="hospitalName" type="text"
-           class="form-control form-control-sm" required>
+           class="form-control form-control-sm">
+
     <br> Hospital type:
     <input id="hospitalType" name="hospitalType" type="text"
            class="form-control form-control-sm">
@@ -44,6 +45,7 @@
     <input id="btnSave" name="btnSave" type="button" value="Save"
            class="btn btn-primary">
     <input type="hidden" id="hidHosIDSave" name="hidHosIDSave" value="">
+    <button type="reset" class="btn btn-outline-dark" value="Reset">Reset</button>
 </form>
             <div id="alertSuccess" class="alert alert-success"></div>
             <div id="alertError" class="alert alert-danger"></div>

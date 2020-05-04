@@ -16,13 +16,13 @@ $(document).on("click", "#btnSave", function (event) {
     $("#alertError").hide();
     console.log("save btn pressed");
 
-// Form validation-------------------
-//     var status = validateHospitalForm();
-//     if (status != true) {
-//         $("#alertError").text(status);
-//         $("#alertError").show();
-//         return;
-//     }
+//Form validation-------------------
+    var status = validateForm();
+    if (status != true) {
+        $("#alertError").text(status);
+        $("#alertError").show();
+        return;
+    }
 
 // If valid------------------------
     var type = ($("#hidHosIDSave").val() == "") ? "POST" : "PUT";
@@ -129,15 +129,22 @@ $(document).on("click", ".btnUpdate", function (event) {
 });
 
 // CLIENT- MODEL=========================================================================
-// function validateForm() {
-//     var name = document.forms["formHospital"]["hospitalName"].value;
-//     var type = document.forms["formHospital"]["hospitalType"].value;
-//     console.log(name);
-//     if(name == ""){
-//         $("#alertError").text("Need to have a valid name").show();
-//         return false;
-//     }else if (type==""){
-//         $("#alertError").text("Need to have a valid type").show();
-//         return false;
-//     }
-// }
+function validateForm() {
+
+    if ($("#hospitalName").val() == "") {
+        return "Enter Hospital Name";
+    }
+    if ($("#hospitalType").val() == "") {
+        return "Enter Hospital Type";
+    }
+    if ($("#hospitalDesc").val() == "") {
+        return "Enter Hospital Description";
+    }
+    if ($("#hospitalAddress").val() == "") {
+        return "Enter Hospital Address";
+    }
+    if ($("#hospitalPhone").val().trim() == "") {
+        return "Enter Hospital Phone";
+    }
+    return true;
+}
