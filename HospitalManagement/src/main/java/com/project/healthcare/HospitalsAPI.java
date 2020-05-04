@@ -16,9 +16,12 @@ import java.util.Scanner;
 
 @WebServlet("/HospitalsAPI")
 public class HospitalsAPI extends HttpServlet {
-
+    private static final long serialVersionUID = 1L;
     HospitalController hospitalController = new HospitalController();
-
+    public HospitalsAPI() {
+        super();
+        // TODO Auto-generated constructor stub
+    }
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         Hospital hospital = new Hospital();
         hospital.setName(request.getParameter("hospitalName"));
@@ -32,7 +35,7 @@ public class HospitalsAPI extends HttpServlet {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+        response.getWriter().append("Served at: ").append(request.getContextPath());
     }
 
     protected void doPut(javax.servlet.http.HttpServletRequest request, javax.servlet.http.HttpServletResponse response) throws javax.servlet.ServletException, IOException {
@@ -55,8 +58,8 @@ public class HospitalsAPI extends HttpServlet {
 
     protected void doDelete(javax.servlet.http.HttpServletRequest request, javax.servlet.http.HttpServletResponse response) throws javax.servlet.ServletException, IOException {
         Map paras = getParasMap(request);
-
-        String output = hospitalController.deleteHospital(Integer.parseInt(paras.get("hidHosIDDelete").toString()));
+        System.out.println(Integer.parseInt(paras.get("hospitalID").toString()));
+        String output = hospitalController.deleteHospital(Integer.parseInt(paras.get("hospitalID").toString()));
         response.getWriter().write(output);
     }
 

@@ -6,7 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@page import="com.project.healthcare.controller.HospitalController"%>
+<%@ page import="com.project.healthcare.controller.HospitalController" %>
 <%@ page import="com.project.healthcare.model.Hospital" %>
 
 <html>
@@ -16,14 +16,15 @@
     <script src="Components/hospitals.js"></script>
     <title>Hospital Management</title>
 </head>
-<body>
+<body style="padding-top: 6em">
 <div class="container">
     <div class="row">
-        <div class="col-md-9">
+        <div class="col-4">
 <form id="formHospital" name="formHospital" method="post" action="hospital.jsp">
     Hospital ID:
-    <input id="hospitalID" name="hospitalID" type="text"
-           class="form-control form-control-sm">
+<%--    <input id="hospitalID" name="hospitalID" type="text"--%>
+<%--           class="form-control form-control-sm">--%>
+    <div id="hosID" name="hosID" class="badge badge-info"></div>
     <br> Hospital name:
     <input id="hospitalName" name="hospitalName" type="text"
            class="form-control form-control-sm">
@@ -36,7 +37,6 @@
     <br> Hospital address:
     <input id="hospitalAddress" name="hospitalAddress" type="text"
            class="form-control form-control-sm">
-    <br>
     <br> Hospital phone:
     <input id="hospitalPhone" name="hospitalPhone" type="text"
            class="form-control form-control-sm">
@@ -48,16 +48,14 @@
             <div id="alertSuccess" class="alert alert-success"></div>
             <div id="alertError" class="alert alert-danger"></div>
             <br>
-            <div id="divHospitalsGrid">
+        </div>
+            <div id="divHospitalsGrid" class="col-8">
                 <%
                     HospitalController hospitalController = new HospitalController();
                     out.print(hospitalController.getAllHospitals());
                 %>
             </div>
         </div>
-    </div>
 </div>
-
-
 </body>
 </html>

@@ -50,7 +50,7 @@ public class HospitalController implements IHospitalController {
     }
 
     public String getAllHospitals(){
-        String output = "<table border=\"1\"><tr><th>ID</th><th>Name</th><th>Type</th><th>Description</th><th>Address</th><th>Phone</th><th>Update</th><th>Remove</th></tr>";
+        String output = "<table class='table table-bordered'><tr><th>ID</th><th>Name</th><th>Type</th><th>Description</th><th>Address</th><th>Phone</th><th>Update</th><th>Remove</th></tr>";
         List<Hospital> lsits = getHospitals();
         for (Hospital h: lsits
         ) {
@@ -68,7 +68,7 @@ public class HospitalController implements IHospitalController {
             output += "<td>" + address + "</td>";
             output += "<td>" + phone + "</td>";
 
-            output += "<td><input name='btnUpdate' type='button' value='Update' class='btnUpdate btn btn-secondary'></td> <td><input name='btnRemove' type='button' value='Remove' class='btnRemove btn btn-danger' data-itemid='" + id + "'>" + "</td></tr>";
+            output += "<td><input name='btnUpdate' type='button' value='Update' class='btnUpdate btn btn-secondary'></td> <td><input name='btnRemove' type='button' value='Remove' class='btnRemove btn btn-danger' data-hospitalid='" + id + "'>" + "</td></tr>";
         }
         output += "</table>";
         return output;
@@ -77,6 +77,7 @@ public class HospitalController implements IHospitalController {
 
     @Override
     public String createHospital(Hospital h) {
+        String output = "";
         int hosId = idGenerate.generateHosID((ArrayList<Integer>) getIDs());
         String sql = "insert into hospital values (?,?,?,?,?,?)";
         boolean validate = false;
@@ -105,14 +106,19 @@ public class HospitalController implements IHospitalController {
                 pt.setString(5, h.getAddress());
                 pt.setString(6, h.getPhone());
                 pt.executeUpdate();
+
+                String newHospitals = getAllHospitals();
+                output = "{\"status\":\"success\", \"data\": \"" + newHospitals + "\"}";
+
             } catch (SQLException e) {
+                output = "{\"status\":\"error\", \"data\": \"Error while inserting the hospital\"}";
                 log.log(Level.SEVERE, e.getMessage());
             } finally {
                 ptClose(pt);
             }
-            return "Created";
+            return output;
         }else {
-        	return "Not a Valid Hospital";
+        	return "{\"status\":\"error\", \"data\": \"Error! Not a valid Hospital\"}";
         }
         
         }
@@ -152,10 +158,15 @@ public class HospitalController implements IHospitalController {
             pt.setString(5, h.getPhone());
             pt.setInt(6, h.getId());
             pt.executeUpdate();
-            output="Updated";
+
+            String newHospitals = getAllHospitals();
+            output = "{\"status\":\"success\", \"data\": \"" + newHospitals + "\"}";
+
         } catch (SQLException e) {
+
+            output = "{\"status\":\"error\", \"data\": \"Error while updating the hospital\"}";
             log.log(Level.SEVERE, e.getMessage());
-            output="Error";
+
         } finally {
             ptClose(pt);
         }
@@ -171,10 +182,13 @@ public class HospitalController implements IHospitalController {
             pt = connecton.prepareStatement(sql);
             pt.setInt(1, id);
             pt.executeUpdate();
-            output = "Successfully Deleted";
+
+            String newHospitals = getAllHospitals();
+            output = "{\"status\":\"success\", \"data\": \"" + newHospitals + "\"}";
+
         } catch (SQLException e) {
             log.log(Level.SEVERE, e.getMessage());
-            output = "Error";
+            output = "{\"status\":\"error\", \"data\": \"Error while deleting the hospital\"}";
         } finally {
             ptClose(pt);
         }
