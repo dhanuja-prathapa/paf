@@ -116,11 +116,11 @@ public class HospitalController implements IHospitalController {
             } finally {
                 ptClose(pt);
             }
-            return output;
         }else {
-        	return "{\"status\":\"error\", \"data\": \"Error! Not a valid Hospital\"}";
+            System.out.println("Not a valid");
+        	output = "{\"status\":\"error\", \"data\": \"Error! Not a valid Hospital\"}";
         }
-        
+            return output;
         }
 
 

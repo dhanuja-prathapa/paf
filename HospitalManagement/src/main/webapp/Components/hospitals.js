@@ -36,7 +36,6 @@ $(document).on("click", "#btnSave", function (event) {
             complete: function (response, status) {
 
                 onHospitalSaveComplete(response.responseText, status)
-                console.log(status)
             }
 
         });
@@ -46,20 +45,20 @@ function onHospitalSaveComplete(response, status) {
     if (status == "success") {
 
         var resultSet = JSON.parse(response);
-
+        console.log(resultSet.status.trim());
         if (resultSet.status.trim() == "success") {
 
             $("#alertSuccess").text("Successfully saved. ");
             $("#alertSuccess").show();
 
             $("#divHospitalsGrid").html(resultSet.data);
-        } else if (resultSet.status.trim() == "error") {
+        }else if (resultSet.status.trim() == "error") {
 
             $("#alertError").text(resultSet.data);
-            $("#alertSuccess").show()
+            $("#alertError").show()
         }
 
-    } else if (status == "Not a Valid Hospital") {
+    } else if (status == "error") {
 
         $("#alertError").text("Error while saving");
         $("#alertError").show()
@@ -130,27 +129,15 @@ $(document).on("click", ".btnUpdate", function (event) {
 });
 
 // CLIENT- MODEL=========================================================================
-function validateHospitalForm() {
-
-    // NAME
-    if ($("#hospitalName").val().trim() == "") {
-        return "Insert Name";
-    }
-    // Type
-    if ($("#hospitalType").val().trim() == "") {
-        return "Insert Type";
-    }
-    // Description
-    if ($("#hospitalDesc").val().trim() == "") {
-        return "Insert Description";
-    }
-    // Address
-    if ($("#hospitalAddress").val().trim() == "") {
-        return "Insert Address";
-    }
-    // Phone
-    if ($("#hospitalPhone").val().trim() == "") {
-        return "Insert Phone";
-    }
-
-}
+// function validateForm() {
+//     var name = document.forms["formHospital"]["hospitalName"].value;
+//     var type = document.forms["formHospital"]["hospitalType"].value;
+//     console.log(name);
+//     if(name == ""){
+//         $("#alertError").text("Need to have a valid name").show();
+//         return false;
+//     }else if (type==""){
+//         $("#alertError").text("Need to have a valid type").show();
+//         return false;
+//     }
+// }

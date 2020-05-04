@@ -27,7 +27,7 @@
     <div id="hosID" name="hosID" class="badge badge-info"></div>
     <br> Hospital name:
     <input id="hospitalName" name="hospitalName" type="text"
-           class="form-control form-control-sm">
+           class="form-control form-control-sm" required>
     <br> Hospital type:
     <input id="hospitalType" name="hospitalType" type="text"
            class="form-control form-control-sm">

@@ -31,6 +31,7 @@ public class HospitalsAPI extends HttpServlet {
         hospital.setPhone(request.getParameter("hospitalPhone"));
 
         String output = hospitalController.createHospital(hospital);
+        System.out.println(output);
         response.getWriter().write(output);
     }
 
