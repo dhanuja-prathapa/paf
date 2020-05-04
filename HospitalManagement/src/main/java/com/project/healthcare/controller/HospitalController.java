@@ -50,7 +50,7 @@ public class HospitalController implements IHospitalController {
     }
 
     public String getAllHospitals(){
-        String output = "<table class='table table-bordered'><tr><th>ID</th><th>Name</th><th>Type</th><th>Description</th><th>Address</th><th>Phone</th><th>Update</th><th>Remove</th></tr>";
+        String output = "<table class='table table-bordered table-hover'><tr><th>ID</th><th>Name</th><th>Type</th><th>Description</th><th>Address</th><th>Phone</th><th>Update</th><th>Remove</th></tr>";
         List<Hospital> lsits = getHospitals();
         for (Hospital h: lsits
         ) {
