@@ -16,8 +16,11 @@
     <script src="Components/hospitals.js"></script>
     <title>Hospital Management</title>
 </head>
-<body style="padding-top: 6em">
-<div class="container">
+<body>
+<nav class="navbar navbar-light bg-light">
+    <a class="navbar-brand" href="hospitals.jsp" style="padding-left: 3em" >Hospital Management</a>
+</nav>
+<div class="container" style="padding-top: 4em">
     <div class="row">
         <div class="col-4">
 <form id="formHospital" name="formHospital" method="post" action="hospital.jsp">
@@ -27,7 +30,13 @@
     <div id="hosID" name="hosID" class="badge badge-info"></div>
     <br> Hospital name:
     <input id="hospitalName" name="hospitalName" type="text"
-           class="form-control form-control-sm">
+           class="form-control form-control-sm" list="reghos">
+    <datalist id="reghos">
+        <%
+            HospitalController register = new HospitalController();
+            out.print(register.reghos());
+        %>
+    </datalist>
 
     <br> Hospital type:
     <input id="hospitalType" name="hospitalType" type="text"

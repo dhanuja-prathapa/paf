@@ -292,5 +292,16 @@ public class HospitalController implements IHospitalController {
 		return dataList;
 	}
 
+	public String reghos(){
+        List<HospitalAuth> dataList = getDetails();
+        StringBuilder output = new StringBuilder();
+
+        for (HospitalAuth hospitalAuth : dataList){
+            output.append("<option>").append(hospitalAuth.getName()).append("</option>");
+        }
+
+        return output.toString();
+    }
+
 
 }
