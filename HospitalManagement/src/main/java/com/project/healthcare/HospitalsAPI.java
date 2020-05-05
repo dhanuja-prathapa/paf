@@ -44,11 +44,11 @@ public class HospitalsAPI extends HttpServlet {
         Map paras = getParasMap(request);
         Hospital hospital = new Hospital();
 
-        hospital.setId(Integer.parseInt((paras.get("hidHosIDSave")).toString()));
-        hospital.setName(paras.get("hospitalName").toString());
-        hospital.setType(paras.get("hospitalType").toString());
-        hospital.setDescription(paras.get("hospitalDesc").toString());
-        hospital.setAddress(paras.get("hospitalAddress").toString());
+        hospital.setId(Integer.parseInt((paras.get("hidHosIDSave")).toString().replace("+"," ")));
+        hospital.setName(paras.get("hospitalName").toString().replace("+"," "));
+        hospital.setType(paras.get("hospitalType").toString().replace("+"," "));
+        hospital.setDescription(paras.get("hospitalDesc").toString().replace("+"," ").replace("%2C",", "));
+        hospital.setAddress(paras.get("hospitalAddress").toString().replace("+"," ").replace("%2C",", ").replace("%2F","/"));
         hospital.setPhone(paras.get("hospitalPhone").toString());
 
         String output = hospitalController.updateHospital(hospital);

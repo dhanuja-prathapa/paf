@@ -46,7 +46,15 @@
 
     <br> Hospital type:
     <input id="hospitalType" name="hospitalType" type="text"
-           class="form-control form-control-sm" placeholder="Type">
+           class="form-control form-control-sm" placeholder="Type" list="regtype">
+    <datalist id="regtype">
+        <option>Private Hospital</option>
+        <option>National Hospital</option>
+        <option>Base Hospital Type A</option>
+        <option>Base Hospital Type B</option>
+        <option>Divisional Hospital Type A</option>
+        <option>Divisional Hospital Type B</option>
+    </datalist>
     <br> Hospital description:
     <input id="hospitalDesc" name="hospitalDesc" type="text"
            class="form-control form-control-sm" placeholder="Description">

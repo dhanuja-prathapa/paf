@@ -13,6 +13,7 @@ $(document).on("click","#btnReset",function () {
     $("#alertError").hide();
     $("#configerror").hide();
     $("#hosID").text("");
+    $("#hidHosIDSave").val("");
     $("#formHospital")[0].reset();
 });
 
@@ -59,7 +60,7 @@ function onHospitalSaveComplete(response, status) {
 
             $("#alertSuccess").text("Successfully saved. ");
             $("#alertSuccess").show();
-
+            $("#configerror").hide();
             $("#divHospitalsGrid").html(resultSet.data);
         }else if (resultSet.status.trim() == "error") {
 
