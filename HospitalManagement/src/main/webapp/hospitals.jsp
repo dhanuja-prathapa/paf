@@ -46,7 +46,7 @@
 
     <br> Hospital type:
     <input id="hospitalType" name="hospitalType" type="text"
-           class="form-control form-control-sm" placeholder="Type" list="regtype">
+           class="form-control form-control-sm" placeholder="Type" list="regtype" maxlength="32">
     <datalist id="regtype">
         <option>Private Hospital</option>
         <option>National Hospital</option>
@@ -57,13 +57,13 @@
     </datalist>
     <br> Hospital description:
     <input id="hospitalDesc" name="hospitalDesc" type="text"
-           class="form-control form-control-sm" placeholder="Description">
+           class="form-control form-control-sm" placeholder="Description" maxlength="64">
     <br> Hospital address:
     <input id="hospitalAddress" name="hospitalAddress" type="text"
-           class="form-control form-control-sm" placeholder="Address">
+           class="form-control form-control-sm" placeholder="Address" maxlength="64">
     <br> Hospital phone:
     <input id="hospitalPhone" name="hospitalPhone" type="number"
-           class="form-control form-control-sm" placeholder="Phone">
+           class="form-control form-control-sm" placeholder="Phone" maxlength="14">
     <br>
     <input id="btnSave" name="btnSave" type="button" value="Save"
            class="btn btn-primary">

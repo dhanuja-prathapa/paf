@@ -6,7 +6,12 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="dadfed12-ecbc-4e0b-9687-bbc1be545d86" name="Default Changelist" comment="" />
+    <list default="true" id="dadfed12-ecbc-4e0b-9687-bbc1be545d86" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/hospitals.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/hospitals.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/HospitalManagement.war" beforeDir="false" afterPath="$PROJECT_DIR$/target/HospitalManagement.war" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,7 +69,7 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="LogFilters">
     <option name="FILTER_ERRORS" value="false" />
@@ -91,7 +96,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="extract.method.default.visibility" value="private" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/HospitalAuth" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
@@ -233,6 +238,7 @@
       <workItem from="1588050452182" duration="430000" />
       <workItem from="1588405821667" duration="2432000" />
       <workItem from="1588426878611" duration="1734000" />
+      <workItem from="1588679540262" duration="526000" />
     </task>
     <task id="LOCAL-00001" summary="HospitalAuth api integrated">
       <created>1587135614531</created>
