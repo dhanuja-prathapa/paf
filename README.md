@@ -1,4 +1,4 @@
-![](images/hospital.png)
+![](images/hospital.PNG)
 ![](images/create.gif)
 ![](images/update.gif)
 ![](images/delete.gif)
