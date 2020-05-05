@@ -6,7 +6,11 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="dadfed12-ecbc-4e0b-9687-bbc1be545d86" name="Default Changelist" comment="" />
+    <list default="true" id="dadfed12-ecbc-4e0b-9687-bbc1be545d86" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Components/hospitals.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/Components/hospitals.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/HospitalManagement.war" beforeDir="false" afterPath="$PROJECT_DIR$/target/HospitalManagement.war" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -233,7 +237,7 @@
       <workItem from="1588050452182" duration="430000" />
       <workItem from="1588405821667" duration="2432000" />
       <workItem from="1588426878611" duration="1734000" />
-      <workItem from="1588679540262" duration="1063000" />
+      <workItem from="1588679540262" duration="2618000" />
     </task>
     <task id="LOCAL-00001" summary="HospitalAuth api integrated">
       <created>1587135614531</created>

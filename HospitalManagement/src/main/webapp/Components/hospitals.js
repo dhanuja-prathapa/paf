@@ -86,7 +86,7 @@ function onHospitalSaveComplete(response, status) {
 
 //DELETE
 $(document).on("click", ".btnRemove", function (event) {
-
+    hidealerts();
     $.ajax({
         url: "HospitalsAPI",
         type: "DELETE",
@@ -129,6 +129,7 @@ function onHospitalDeleteComplete(response, status) {
 
 // UPDATE==========================================
 $(document).on("click", ".btnUpdate", function (event) {
+    hidealerts();
     $("#hidHosIDSave").val($(this).closest("tr").find('#hidHosIDUpdate').val());
     // $("#hospitalID").val($(this).closest("tr").find('td:eq(0)').text());
     $("#hosID").text($(this).closest("tr").find('td:eq(0)').text());
@@ -159,5 +160,14 @@ function validateForm() {
     if ($("#hospitalPhone").val().trim() == "") {
         return "Enter Hospital Phone";
     }
+    if($("#hospitalPhone").val().length > 14 || $("#hospitalPhone").val().length < 10){
+        return "Enter valid phone number";
+    }
     return true;
+}
+
+function hidealerts() {
+    $("#alertError").hide();
+    $("#alertSuccess").hide();
+    $("#configerror").hide();
 }
