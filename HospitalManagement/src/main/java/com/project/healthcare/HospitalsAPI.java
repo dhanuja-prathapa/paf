@@ -47,8 +47,8 @@ public class HospitalsAPI extends HttpServlet {
         hospital.setId(Integer.parseInt((paras.get("hidHosIDSave")).toString().replace("+"," ")));
         hospital.setName(paras.get("hospitalName").toString().replace("+"," "));
         hospital.setType(paras.get("hospitalType").toString().replace("+"," "));
-        hospital.setDescription(paras.get("hospitalDesc").toString().replace("+"," ").replace("%2C",", "));
-        hospital.setAddress(paras.get("hospitalAddress").toString().replace("+"," ").replace("%2C",", ").replace("%2F","/"));
+        hospital.setDescription(paras.get("hospitalDesc").toString().replace("+"," ").replace("%2C",","));
+        hospital.setAddress(paras.get("hospitalAddress").toString().replace("+"," ").replace("%2C",",").replace("%2F","/"));
         hospital.setPhone(paras.get("hospitalPhone").toString());
 
         String output = hospitalController.updateHospital(hospital);
