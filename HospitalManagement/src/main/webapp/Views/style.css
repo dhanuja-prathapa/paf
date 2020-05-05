@@ -1,0 +1,12 @@
+@media (max-width: 1366px){
+    .container, .container-lg, .container-md, .container-sm, .container-xl {
+        max-width: 100% !important;
+
+    }
+}
+
+@media (min-width: 1367px) {
+    .container, .container-lg, .container-md, .container-sm, .container-xl {
+        max-width: 1277px;
+    }
+}

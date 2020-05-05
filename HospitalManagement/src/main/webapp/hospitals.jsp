@@ -11,7 +11,9 @@
 
 <html>
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="Views/bootstrap.min.css">
+    <link rel="stylesheet" href="Views/style.css">
     <script src="Components/jquery-3.2.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
@@ -19,19 +21,21 @@
     <title>Hospital Management</title>
 </head>
 <body>
-<div class="alert alert-info alert-dismissible fade show" style="margin-bottom: 0px" role="alert">
+<div class="alert alert-danger alert-dismissible fade show" style="margin-bottom: 0px" role="alert">
     <h4 class="alert-heading">Configure </h4>
     <p>You need to run the HospitalAuth service to run this properly.</p>
     <hr>
     <p class="mb-0">Run hospitalAuth on port 8090</p>
     <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 </div>
-<nav class="navbar navbar-light bg-light">
-    <a class="navbar-brand" href="hospitals.jsp" style="padding-left: 3em" >Hospital Management</a>
+<nav class="navbar navbar-dark bg-dark">
+    <a class="navbar-brand mx-auto" href="hospitals.jsp" >Hospital Management</a>
 </nav>
 <div class="container" style="padding-top: 4em">
     <div class="row">
-        <div class="col-4">
+        <div class="col-lg-4 col-md-6 navbar-dark">
+            <h6 class="bg-dark navbar-brand text-center col-12" style="padding: 0.7em; font-size: medium">Create/Update Hospital</h6>
+        <div class="p-3 border bg-light rounded" style="margin-top: -8px">
 <form id="formHospital" name="formHospital" method="post" action="hospital.jsp">
     Hospital ID:
 <%--    <input id="hospitalID" name="hospitalID" type="text"--%>
@@ -69,7 +73,8 @@
             <div id="alertError" class="alert alert-danger"></div>
             <br>
         </div>
-            <div id="divHospitalsGrid" class="col-8">
+    </div>
+            <div id="divHospitalsGrid" class="col-lg-8 col-md-12">
                 <%
                     HospitalController hospitalController = new HospitalController();
                     out.print(hospitalController.getAllHospitals());
