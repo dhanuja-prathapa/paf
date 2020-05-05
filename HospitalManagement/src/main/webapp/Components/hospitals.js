@@ -137,6 +137,7 @@ $(document).on("click", ".btnUpdate", function (event) {
     $("#hospitalAddress").val($(this).closest("tr").find('td:eq(4)').text());
     $("#hospitalPhone").val($(this).closest("tr").find('td:eq(5)').text());
     $("#hosID").show();
+    $("#hospitalType").focus();
 });
 
 // CLIENT- MODEL=========================================================================
