@@ -21,13 +21,6 @@
     <title>Hospital Management</title>
 </head>
 <body>
-<div class="alert alert-danger alert-dismissible fade show" style="margin-bottom: 0px" role="alert">
-    <h4 class="alert-heading">Configure </h4>
-    <p>You need to run the HospitalAuth service to run this properly.</p>
-    <hr>
-    <p class="mb-0">Run hospitalAuth on port 8090</p>
-    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-</div>
 <nav class="navbar navbar-dark bg-dark">
     <a class="navbar-brand mx-auto" href="hospitals.jsp" >Hospital Management</a>
 </nav>
@@ -43,7 +36,7 @@
     <div id="hosID" name="hosID" class="badge badge-info"></div>
     <br> Hospital name:
     <input id="hospitalName" name="hospitalName" type="text"
-           class="form-control form-control-sm" list="reghos">
+           class="form-control form-control-sm" list="reghos" placeholder="Name">
     <datalist id="reghos">
         <%
             HospitalController register = new HospitalController();
@@ -53,21 +46,21 @@
 
     <br> Hospital type:
     <input id="hospitalType" name="hospitalType" type="text"
-           class="form-control form-control-sm">
+           class="form-control form-control-sm" placeholder="Type">
     <br> Hospital description:
     <input id="hospitalDesc" name="hospitalDesc" type="text"
-           class="form-control form-control-sm">
+           class="form-control form-control-sm" placeholder="Description">
     <br> Hospital address:
     <input id="hospitalAddress" name="hospitalAddress" type="text"
-           class="form-control form-control-sm">
+           class="form-control form-control-sm" placeholder="Address">
     <br> Hospital phone:
     <input id="hospitalPhone" name="hospitalPhone" type="number"
-           class="form-control form-control-sm">
+           class="form-control form-control-sm" placeholder="Phone">
     <br>
     <input id="btnSave" name="btnSave" type="button" value="Save"
            class="btn btn-primary">
     <input type="hidden" id="hidHosIDSave" name="hidHosIDSave" value="">
-    <button type="reset" class="btn btn-outline-dark" value="Reset">Reset</button>
+    <button type="reset" id="btnReset" name="btnReset" class="btn btn-outline-dark" value="Reset">Reset</button>
 </form>
             <div id="alertSuccess" class="alert alert-success"></div>
             <div id="alertError" class="alert alert-danger"></div>
@@ -82,5 +75,14 @@
             </div>
         </div>
 </div>
+<footer>
+<div id="configerror" name="configerror" class="alert alert-danger alert-dismissible fade show" style=" position: fixed;left: 0;bottom: 0;width: 100%;text-align: center;margin-bottom: 0px" role="alert">
+    <h4 class="alert-heading">Configure </h4>
+    <p>You need to run the HospitalAuth service to run this properly.</p>
+    <hr>
+    <p class="mb-0">Run hospitalAuth on port 8090</p>
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+</div>
+</footer>
 </body>
 </html>

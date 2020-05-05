@@ -3,8 +3,17 @@ $(document).ready(function () {
         $("#alertSuccess").hide();
     }
     $("#alertError").hide();
+    $("#configerror").hide();
+});
 
-
+$(document).on("click","#btnReset",function () {
+    $("#alertSuccess").text("");
+    $("#alertSuccess").hide();
+    $("#alertError").text("");
+    $("#alertError").hide();
+    $("#configerror").hide();
+    $("#hosID").text("");
+    $("#formHospital")[0].reset();
 });
 
 // SAVE ============================================
@@ -55,7 +64,8 @@ function onHospitalSaveComplete(response, status) {
         }else if (resultSet.status.trim() == "error") {
 
             $("#alertError").text(resultSet.data);
-            $("#alertError").show()
+            $("#alertError").show();
+            $("#configerror").show();
         }
 
     } else if (status == "error") {
@@ -69,6 +79,7 @@ function onHospitalSaveComplete(response, status) {
     $("#hidHosIDSave").val("");
     $("#hosID").text("");
     $("#formHospital")[0].reset();
+
 
 }
 
