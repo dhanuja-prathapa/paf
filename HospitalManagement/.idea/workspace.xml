@@ -6,7 +6,9 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="dadfed12-ecbc-4e0b-9687-bbc1be545d86" name="Default Changelist" comment="" />
+    <list default="true" id="dadfed12-ecbc-4e0b-9687-bbc1be545d86" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -235,6 +237,7 @@
       <workItem from="1588426878611" duration="1734000" />
       <workItem from="1588679540262" duration="2912000" />
       <workItem from="1588695930608" duration="624000" />
+      <workItem from="1588744158326" duration="1897000" />
     </task>
     <task id="LOCAL-00001" summary="HospitalAuth api integrated">
       <created>1587135614531</created>
